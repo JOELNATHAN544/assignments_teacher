@@ -10,6 +10,6 @@ jobs:
 
     name: Send Discord Notification
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.SECRET }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.SECRET_2 }}
         run: |
           curl -H "Content-Type: application/json" \-X POST \-d "{"content": "New push event in repository: $GITHUB_REPOSITORY by $GITHUB_ACTOR"}" \$DISCORD_WEBHOOK_URL
