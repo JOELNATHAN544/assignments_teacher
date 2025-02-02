@@ -1,4 +1,5 @@
-name: Discord notify me
+
+name: Discord Notification
 
 on: [push]
 
@@ -11,6 +12,5 @@ jobs:
     - name: Send Discord Notification
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.NATHAN }}
-      run: |
+        run: |
           curl -H "Content-Type: application/json" \-X POST \-d "{"content": "New push event in repository: $GITHUB_REPOSITORY by $GITHUB_ACTOR"}" \$DISCORD_WEBHOOK_URL
-
